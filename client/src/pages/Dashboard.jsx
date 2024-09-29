@@ -154,7 +154,7 @@ const Dashboard = () => {
       label: "TOTAL TASK",
       total: summary?.totalTasks || 0,
       icon: <FaNewspaper />,
-      bg: "bg-[#1d4ed8]",
+      bg: "bg-[#229ea6]",
     },
     {
       _id: "2",
@@ -185,7 +185,7 @@ const Dashboard = () => {
         <div className='h-full flex flex-1 flex-col justify-between'>
           <p className='text-base text-gray-600'>{label}</p>
           <span className='text-2xl font-semibold'>{count}</span>
-          <span className='text-sm text-gray-400'>{"110 last month"}</span>
+          <span className='text-sm text-gray-400'>{"10 last month"}</span>
         </div>
 
         <div
@@ -211,7 +211,12 @@ const Dashboard = () => {
         <h4 className='text-xl text-gray-600 font-semibold'>
           Chart by Priority
         </h4>
+        
+        <div className="flex">
         <Chart />
+        <Chart />
+        </div>
+        
       </div>
 
       <div className='w-full flex flex-col md:flex-row gap-4 2xl:gap-10 py-8'>

@@ -41,13 +41,13 @@ export const formatDate = (date) => {
   };
   
   export const TASK_TYPE = {
-    todo: "bg-blue-600",
+    todo: "bg-[#229ea6]",
     "in progress": "bg-yellow-600",
     completed: "bg-green-600",
   };
   
   export const BGS = [
-    "bg-blue-600",
+    "bg-[#229ea6]",
     "bg-yellow-600",
     "bg-red-600",
     "bg-green-600",
