@@ -9,7 +9,7 @@ import { LuClipboardEdit } from "react-icons/lu";
 import { FaNewspaper, FaUsers } from "react-icons/fa";
 import { FaArrowsToDot } from "react-icons/fa6";
 import moment from "moment";
-import { summary } from "../assets/data.js";
+import { chartData1, chartData2, summary } from "../assets/data.js";
 import clsx from "clsx";
 import { Chart } from "../components/Chart";
 import { BGS, PRIOTITYSTYELS, TASK_TYPE, getInitials } from "../utils";
@@ -213,8 +213,8 @@ const Dashboard = () => {
         </h4>
         
         <div className="flex">
-        <Chart />
-        <Chart />
+        <Chart data={chartData1} />
+        <Chart data={chartData2} />
         </div>
         
       </div>
