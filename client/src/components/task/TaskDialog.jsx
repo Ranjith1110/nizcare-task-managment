@@ -17,9 +17,9 @@ const TaskDialog = ({ task }) => {
 
   const navigate = useNavigate();
 
-  const duplicateHandler = () => {};
-  const deleteClicks = () => {};
-  const deleteHandler = () => {};
+  const duplicateHandler = () => { };
+  const deleteClicks = () => { };
+  const deleteHandler = () => { };
 
   const items = [
     {
@@ -40,7 +40,7 @@ const TaskDialog = ({ task }) => {
     {
       label: "Duplicate",
       icon: <HiDuplicate className='mr-2 h-5 w-5' aria-hidden='true' />,
-      onClick: () => duplicateHanlder(),
+      onClick: () => duplicateHandler(),
     },
   ];
 
@@ -68,9 +68,8 @@ const TaskDialog = ({ task }) => {
                     {({ active }) => (
                       <button
                         onClick={el?.onClick}
-                        className={`${
-                          active ? "bg-blue-500 text-white" : "text-gray-900"
-                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                        className={`${active ? "bg-[#229ea6] text-white" : "text-gray-900"
+                          } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                       >
                         {el.icon}
                         {el.label}
@@ -85,9 +84,8 @@ const TaskDialog = ({ task }) => {
                   {({ active }) => (
                     <button
                       onClick={() => deleteClicks()}
-                      className={`${
-                        active ? "bg-blue-500 text-white" : "text-red-900"
-                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      className={`${active ? "bg-[#229ea6] text-white" : "text-red-900"
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                     >
                       <RiDeleteBin6Line
                         className='mr-2 h-5 w-5 text-red-400'

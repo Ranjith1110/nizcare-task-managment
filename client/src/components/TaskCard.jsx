@@ -39,7 +39,7 @@ const TaskCard = ({ task }) => {
             <span className='uppercase'>{task?.priority} Priority</span>
           </div>
 
-          {user?.isAdmin && <TaskDialog task={task} />}
+          {user && <TaskDialog task={task} />}
         </div>
 
         <>
@@ -97,7 +97,7 @@ const TaskCard = ({ task }) => {
               <span className='text-sm text-gray-600'>
                 {formatDate(new Date(task?.subTasks[0]?.date))}
               </span>
-              <span className='bg-blue-600/10 px-3 py-1 rounded0full text-blue-700 font-medium'>
+              <span className='bg-blue-600/10 px-3 py-1 rounded0full text-[#229ea6] font-medium'>
                 {task?.subTasks[0].tag}
               </span>
             </div>
@@ -113,7 +113,7 @@ const TaskCard = ({ task }) => {
         <div className='w-full pb-2'>
           <button
             onClick={() => setOpen(true)}
-            disabled={user.isAdmin ? false : true}
+            disabled={user.isAdmin ? false : false}
             className='w-full flex gap-4 items-center text-sm text-gray-500 font-semibold disabled:cursor-not-allowed disabled::text-gray-300'
           >
             <IoMdAdd className='text-lg' />
