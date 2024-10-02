@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   MdAdminPanelSettings,
   MdKeyboardArrowDown,
@@ -14,6 +14,17 @@ import clsx from "clsx";
 import { Chart } from "../components/Chart";
 import { BGS, PRIOTITYSTYELS, TASK_TYPE, getInitials } from "../utils";
 import UserInfo from "../components/UserInfo";
+
+useEffect(() =>{
+
+  const fetchDatas = async () => {
+    const { data } = await axios.get("http://localhost:5000/api/data");
+    setData (data);
+  }
+
+fetchDatas();
+
+})
 
 const TaskTable = ({ tasks }) => {
   const ICONS = {
