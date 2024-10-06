@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MdAdminPanelSettings,
   MdKeyboardArrowDown,
@@ -14,17 +14,19 @@ import clsx from "clsx";
 import { Chart } from "../components/Chart";
 import { BGS, PRIOTITYSTYELS, TASK_TYPE, getInitials } from "../utils";
 import UserInfo from "../components/UserInfo";
+import axios from "axios";
 
-useEffect(() =>{
+// useEffect(() =>{
 
-  const fetchDatas = async () => {
-    const { data } = await axios.get("http://localhost:5000/api/data");
-    setData (data);
-  }
+//   const fetchDatas = async () => {
+//     const { data } = await axios.get("http://localhost:5000/api/data");
+//     setData (data);
+//   }
 
-fetchDatas();
+// fetchDatas();
 
-})
+// })
+
 
 const TaskTable = ({ tasks }) => {
   const ICONS = {
@@ -156,7 +158,18 @@ const UserTable = ({ users }) => {
     </div>
   );
 };
+
 const Dashboard = () => {
+
+  const [data, setData] = useState([]);
+  useEffect(() =>{
+    const fetchDatas = async () => {
+      const { data } = await axios.get("http://localhost:5000/api/chartData1");
+      console.log(data);  
+    };
+    fetchDatas();
+  }, [])
+  
   const totals = summary.tasks;
 
   const stats = [
