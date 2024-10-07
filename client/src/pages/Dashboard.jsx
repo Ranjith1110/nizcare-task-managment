@@ -165,7 +165,7 @@ const Dashboard = () => {
   useEffect(() =>{
     const fetchDatas = async () => {
       const { data } = await axios.get("http://localhost:5000/api/chartData1");
-      console.log(data);  
+      console.log(data); 
     };
     fetchDatas();
   }, [])
